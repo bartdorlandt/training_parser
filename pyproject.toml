@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "training-parser"
+version = "0.0.1"
+description = "Script to parse the training sheets"
+authors = ["Bart Dorlandt <bart@bamweb.nl>"]
+license = "LICENSE"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+rich = "^13"
+openpyxl = "^3.1.2"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8"
+pytest-cov = "*"
+mypy = "*"
+ruff = "*"
+nox = "*"
+nox-poetry = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:The _yaml extension module is now located at yaml._yaml:DeprecationWarning",
+]
+addopts = "--cov=. --cov-report=xml --cov-report=term --junitxml=pytest_report.xml"
+
+[tool.coverage.run]
+branch = true
+omit = ["tests/*", "main.py", "noxfile.py"]
+source = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".git","__pycache__","dist","build",".venv", "test_*", "noxfile.py"]
+
+[tool.ruff.lint]
+extend-ignore = ["D203", "D213"]
+extend-select = ["I", "C90", "D", "PL", "S"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
