@@ -6,17 +6,11 @@
   "schedule": ["before 7am on the 1st day of the month"],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "addLabels": ["dev-dependencies"],
+      "packageNames": ["*"],
+      "matchDepTypes": ["dev"],
       "automerge": true,
       "automergeType": "branch",
       "groupName": "dev dependency updates"
-    },
-    {
-      "packageNames": ["mypy"],
-      "automerge": true,
-      "automergeType": "branch",
-      "groupName": "mypy updates"
     }
   ]
 }
