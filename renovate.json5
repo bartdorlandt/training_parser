@@ -6,7 +6,7 @@
   "packageRules": [
     {
       "packageNames": ["*"],
-      "matchDepTypes": ["dev"],
+      "matchDepTypes": ["dev", "devDependencies"],
       "automerge": true,
       "automergeType": "branch",
       "groupName": "dev dependency updates"
@@ -14,7 +14,7 @@
     {
       "updateTypes": ["patch", "minor", "pin", "digest"],
       "automerge": true,
-      "groupName": "Small updates"
+      "groupName": "Minor updates"
     }
   ]
 }
