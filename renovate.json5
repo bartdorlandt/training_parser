@@ -7,7 +7,7 @@
     {
       "automerge": true,
       "groupName": "poetry-minor",
-      "matchDepTypes": ["dependencies", "dev", "types"],
+      "matchDepTypes": ["dependencies", "dev"],
       "matchManagers": ["poetry"],
       "matchUpdateTypes": [
         "bump",
