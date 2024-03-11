@@ -6,8 +6,8 @@
   "packageRules": [
     {
       "automerge": true,
-      "groupName": "poetry-minor",
-      "matchDepTypes": ["dependencies", "dev"],
+      "groupName": "poetry dev minor",
+      "matchDepTypes": ["dev"],
       "matchManagers": ["poetry"],
       "matchUpdateTypes": [
         "bump",
@@ -21,10 +21,22 @@
     },
     {
       "automerge": true,
-      "groupName": "poetry-major",
-      "matchDepTypes": ["dev", "types"],
+      "groupName": "poetry dev major",
+      "matchDepTypes": ["dev"],
       "matchManagers": ["poetry"],
       "matchUpdateTypes": ["major"],
     },
+    {
+      "groupName": "Python Poetry Non-Major Dependencies",
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+    },
+    {
+      "groupName": "Python Poetry Major Dependencies",
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+    }
   ]
 }
