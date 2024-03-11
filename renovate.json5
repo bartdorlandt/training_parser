@@ -6,15 +6,36 @@
   "packageRules": [
     {
       "packageNames": ["*"],
-      "matchDepTypes": ["dev", "devDependencies"],
+      "matchDepTypes": ["dev.dependencies", "group.dev.dependencies"],
       "automerge": true,
       "automergeType": "branch",
       "groupName": "dev dependency updates"
     },
+//    {
+//      "packageNames": ["*"],
+//      "matchDepTypes": ["dependencies"],
+//      "automerge": true,
+//      "automergeType": "branch",
+//      "groupName": "dependency updates"
+//    },
+//    {
+//      "packageNames": ["*"],
+//      "matchDepTypes": ["peerDependencies"],
+//      "automerge": true,
+//      "automergeType": "branch",
+//      "groupName": "peer dependency updates"
+//    },
     {
-      "updateTypes": ["patch", "minor", "pin", "digest"],
+      "packageNames": ["*"],
+      "matchDepTypes": ["optionalDependencies"],
       "automerge": true,
-      "groupName": "Minor updates"
+      "automergeType": "branch",
+      "groupName": "optional dependency updates"
     }
+//    {
+//      "updateTypes": ["patch", "minor", "pin", "digest"],
+//      "automerge": true,
+//      "groupName": "Minor updates"
+//    }
   ]
 }
