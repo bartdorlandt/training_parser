@@ -10,6 +10,11 @@
       "automerge": true,
       "automergeType": "branch",
       "groupName": "dev dependency updates"
+    },
+    {
+      "updateTypes": ["patch", "minor", "pin", "digest"],
+      "automerge": true,
+      "groupName": "Small updates"
     }
   ]
 }
