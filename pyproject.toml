@@ -16,7 +16,7 @@ python-dotenv = "^1.0.1"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8"
+pytest = "*"
 pytest-cov = "*"
 mypy = "*"
 ruff = "*"
