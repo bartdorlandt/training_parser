@@ -9,8 +9,6 @@ from dotenv import load_dotenv
 
 from notion.notion import FILTER, Notion, TrainingData
 
-filename = "Training Grabbelbox - 20241012_2.csv"
-
 
 def filter_name_type_tags(data: TrainingData) -> FILTER:
     """Filter on name, type and tags."""
@@ -92,7 +90,8 @@ def unique_name(training_data: list[TrainingData], name: str) -> str:
 def main():
     """Execute the main function."""
     load_dotenv()
-    training_datas = read_csv(f"data/{filename}")
+    filename = os.environ["TRAINING_FILE"]
+    training_datas = read_csv(filename)
     token = os.getenv("NOTION_TOKEN")
     n = Notion(token)
     db_id = os.getenv("NOTION_DB")
