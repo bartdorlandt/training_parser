@@ -11,6 +11,7 @@ python = "^3.11"
 rich = "^13"
 openpyxl = "^3.1.2"
 python-dotenv = "^1.0.1"
+requests = "^2.32.3"
 
 [tool.poetry.group.dev]
 optional = true
@@ -45,7 +46,15 @@ source = ["."]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-extend-exclude = [".git","__pycache__","dist","build",".venv", "test_*", "noxfile.py"]
+extend-exclude = [
+    ".git",
+    "__pycache__",
+    "dist",
+    "build",
+    ".venv",
+    "test_*",
+    "noxfile.py",
+]
 
 [tool.ruff.lint]
 extend-ignore = ["D203", "D213"]
